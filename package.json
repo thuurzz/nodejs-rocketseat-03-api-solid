@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-rocketseat-03-api-solid",
+  "version": "1.0.0",
+  "description": "API nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "tsx watch src/server.ts",
+    "start": "node build/server.js",
+    "build": "tsup src --out-dir build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.5.5",
+    "tsup": "^8.3.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "fastify": "^4.28.1"
+  }
+}
