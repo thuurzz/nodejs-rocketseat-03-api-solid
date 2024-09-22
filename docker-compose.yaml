@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  api-solid-pg:
+    image: bitnami/postgresql
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USERNAME=user
+      - POSTGRESQL_PASSWORD=pwd_postgresql
+      - POSTGRESQL_DATABASE=ignitenode03
