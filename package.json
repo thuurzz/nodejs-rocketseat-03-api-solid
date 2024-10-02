@@ -25,6 +25,7 @@
     "bcryptjs": "2.4.3",
     "dotenv": "16.4.5",
     "fastify": "4.28.1",
+    "pino-pretty": "11.2.2",
     "zod": "3.23.8"
   }
 }

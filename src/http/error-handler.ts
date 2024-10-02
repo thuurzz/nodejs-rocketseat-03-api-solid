@@ -8,6 +8,8 @@ export async function errorHandler(
   _request: FastifyRequest,
   reply: FastifyReply
 ) {
+  const isDevelopment = env.NODE_ENV !== "production";
+
   const log = pino({
     level: process.env.PINO_LOG_LEVEL || "info",
     formatters: {
@@ -19,9 +21,19 @@ export async function errorHandler(
       },
     },
     timestamp: pino.stdTimeFunctions.isoTime,
+    ...(isDevelopment && {
+      transport: {
+        target: "pino-pretty",
+        options: {
+          colorize: true,
+          translateTime: true,
+          singleLine: false,
+        },
+      },
+    }),
   });
 
-  if (env.NODE_ENV !== "production") {
+  if (isDevelopment) {
     log.error(error);
   }
 
