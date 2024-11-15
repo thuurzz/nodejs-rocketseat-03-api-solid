@@ -24,6 +24,6 @@ export class RegisterUseCase {
       password_hash,
     });
 
-    return newUser;
+    return { newUser };
   }
 }
